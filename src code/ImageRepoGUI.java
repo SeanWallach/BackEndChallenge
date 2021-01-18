@@ -11,7 +11,7 @@ import java.awt.Image;
 import javax.imageio.ImageIO;    
 
 /**
- * GUI Class using swing. This class is essentially renders a representation of the ImageRepoModel class, and communication between the two is done through the ImageRepoController.
+ * GUI Class using swing. This class essentially renders a representation of the ImageRepoModel class, and communication between the two is done through the ImageRepoController.
  * @author Sean Wallach
  */
 public class ImageRepoGUI extends javax.swing.JFrame {
@@ -159,7 +159,7 @@ public class ImageRepoGUI extends javax.swing.JFrame {
             ImageIcon imgToSet = new ImageIcon(photoToView.getAbsolutePath());      // Converts the file to an ImageIcon for the frame
             tempPanel.setIcon(imgToSet);
             
-            viewFrame.setSize(tempPanel.getWidth(),tempPanel.getHeight());
+            viewFrame.setSize(tempPanel.getWidth(),tempPanel.getHeight());          // Set the size of the frame to match the size of the photo
             viewFrame.setResizable(false);
             viewFrame.add(tempPanel);
             viewFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);                   
@@ -173,22 +173,22 @@ public class ImageRepoGUI extends javax.swing.JFrame {
      */
     private void addImage(File file) {
         javax.swing.JLabel tempPanel = new javax.swing.JLabel();
-        ImageIcon imgToSet = new ImageIcon(file.getAbsolutePath());
-        tempPanel.setPreferredSize(new Dimension(200,200));
+         ImageIcon imgToSet = new ImageIcon(file.getAbsolutePath());     // create an image icon from the File that was passed to the function
+        tempPanel.setPreferredSize(new Dimension(200,200));             
         tempPanel.setIcon(imgToSet);
        
         tempPanel.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 photoToView = new File(file.getAbsolutePath());
-                if (e.getClickCount() == 2) {
+                if (e.getClickCount() == 2) {                           // Double Clicking opens up the View frame
                      openView();
                 }
-                jButton2.setEnabled(true);
+                jButton2.setEnabled(true);                              // Since a photo has now been selected, the View button can be enabled
             }
             @Override
             public void mousePressed(MouseEvent e) {
-                tempPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+                tempPanel.setBorder(BorderFactory.createLineBorder(Color.black));       // Gives the user some indication that his click was received
             }
              @Override
             public void mouseReleased(MouseEvent e) {
@@ -245,6 +245,7 @@ public class ImageRepoGUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
+    // This method sets the icon of this frame
     private void setFrameIcon() {
         try {
             this.setIconImage(ImageIO.read(new File("../resources/icon.png")));
