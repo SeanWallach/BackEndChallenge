@@ -1,2 +1,3 @@
 So, this is my first project with NetBeans, and I've unfortunately had a bit of trouble exporting it properly as an executable JAR, but i have attached the source code. In theory, if one were so inclined, they could create a new NetBeans project with the same class names, and copy-paste my source code into the appropriate files, build and execute the project. I've attached a link to the NetBeans IDE I used [here](https://netbeans.apache.org/download/nb120/nb120.html).
-I'm terribly sorry about this inconvenience, but I hope you will still have a chance to look over my code... I have extensively documented it if that is of any help (=
+
+If one weren't inclined (I wouldn't blame them) to build it thimself, I would hope they would still have a peek my code... I have spent at least 10 hours on it, and have extensively documented it if that is of any help (=
